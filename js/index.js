@@ -6,6 +6,7 @@ var searchInp = document.getElementById("searchInp");
 var searchBtn = document.getElementById("searchBtn");
 var links = document.getElementsByClassName("nav-link");
 var selects = document.getElementById("cSelect");
+var proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 
 getNews();
 
@@ -37,7 +38,7 @@ function getNews()
 {
     var url = 'https://newsapi.org/v2/top-headlines?country='+country+'&category='+category+'&apiKey=61bb74680da740048b3624c451e6c9d3';
     var req = new XMLHttpRequest();
-    req.open('GET' , url);
+    req.open('GET' ,proxyUrl+url);
     req.send();
 
     req.onreadystatechange = function()
